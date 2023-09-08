@@ -1,0 +1,12 @@
+D:\GitHub\KelioSDK\bin\Release\net6.0\KelioSDK.deps.json
+D:\GitHub\KelioSDK\bin\Release\net6.0\KelioSDK.dll
+D:\GitHub\KelioSDK\bin\Release\net6.0\KelioSDK.pdb
+D:\GitHub\KelioSDK\obj\Release\net6.0\KelioSDK.csproj.AssemblyReference.cache
+D:\GitHub\KelioSDK\obj\Release\net6.0\KelioSDK.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\KelioSDK\obj\Release\net6.0\KelioSDK.AssemblyInfoInputs.cache
+D:\GitHub\KelioSDK\obj\Release\net6.0\KelioSDK.AssemblyInfo.cs
+D:\GitHub\KelioSDK\obj\Release\net6.0\KelioSDK.csproj.CoreCompileInputs.cache
+D:\GitHub\KelioSDK\obj\Release\net6.0\KelioSDK.dll
+D:\GitHub\KelioSDK\obj\Release\net6.0\refint\KelioSDK.dll
+D:\GitHub\KelioSDK\obj\Release\net6.0\KelioSDK.pdb
+D:\GitHub\KelioSDK\obj\Release\net6.0\ref\KelioSDK.dll

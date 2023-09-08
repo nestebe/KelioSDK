@@ -1,0 +1,3 @@
+D:\GitHub\KelioSDK\bin\Release\net6.0\publish\KelioSDK.dll
+D:\GitHub\KelioSDK\bin\Release\net6.0\publish\KelioSDK.deps.json
+D:\GitHub\KelioSDK\bin\Release\net6.0\publish\KelioSDK.pdb

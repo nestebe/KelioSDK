@@ -1,0 +1,65 @@
+﻿
+//.EmployeeTimeManagementDataServiceClient
+
+
+
+
+using KelioSDK.Common;
+using System.Threading.Tasks;
+
+namespace KelioSDK.Services
+{
+  public class EmployeeTimeManagementDataServiceClient
+  {
+    private const string service = "EmployeeTimeManagementDataService";
+    private readonly string username;
+    private readonly string password;
+    private readonly string baseuri;
+
+    public EmployeeTimeManagementDataServiceClient(
+      string username,
+      string password,
+      string baseuri)
+    {
+      this.username = username;
+      this.password = password;
+      this.baseuri = baseuri;
+    }
+
+    public ImportEmployeeTimeManagementDataResponse ImportEmployeeTimeManagementData(
+      ImportEmployeeTimeManagementData arg)
+    {
+      return Client.Post<ImportEmployeeTimeManagementData, ImportEmployeeTimeManagementDataResponse>(this.username, this.password, this.baseuri, "EmployeeTimeManagementDataService", arg);
+    }
+
+    public Task<ImportEmployeeTimeManagementDataResponse> ImportEmployeeTimeManagementDataAsync(
+      ImportEmployeeTimeManagementData arg)
+    {
+      return Client.PostAsync<ImportEmployeeTimeManagementData, ImportEmployeeTimeManagementDataResponse>(this.username, this.password, this.baseuri, "EmployeeTimeManagementDataService", arg);
+    }
+
+    public ExportEmployeesTimeManagementDataResponse ExportEmployeesTimeManagementData(
+      ExportEmployeesTimeManagementData arg)
+    {
+      return Client.Post<ExportEmployeesTimeManagementData, ExportEmployeesTimeManagementDataResponse>(this.username, this.password, this.baseuri, "EmployeeTimeManagementDataService", arg);
+    }
+
+    public Task<ExportEmployeesTimeManagementDataResponse> ExportEmployeesTimeManagementDataAsync(
+      ExportEmployeesTimeManagementData arg)
+    {
+      return Client.PostAsync<ExportEmployeesTimeManagementData, ExportEmployeesTimeManagementDataResponse>(this.username, this.password, this.baseuri, "EmployeeTimeManagementDataService", arg);
+    }
+
+    public ExportEmployeesTimeManagementDataListResponse ExportEmployeesTimeManagementDataList(
+      ExportEmployeesTimeManagementDataList arg)
+    {
+      return Client.Post<ExportEmployeesTimeManagementDataList, ExportEmployeesTimeManagementDataListResponse>(this.username, this.password, this.baseuri, "EmployeeTimeManagementDataService", arg);
+    }
+
+    public Task<ExportEmployeesTimeManagementDataListResponse> ExportEmployeesTimeManagementDataListAsync(
+      ExportEmployeesTimeManagementDataList arg)
+    {
+      return Client.PostAsync<ExportEmployeesTimeManagementDataList, ExportEmployeesTimeManagementDataListResponse>(this.username, this.password, this.baseuri, "EmployeeTimeManagementDataService", arg);
+    }
+  }
+}

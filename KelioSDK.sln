@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KelioSDK", "KelioSDK.csproj", "{E87650F8-50C5-4BEA-8807-4D4AC49E2228}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E87650F8-50C5-4BEA-8807-4D4AC49E2228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E87650F8-50C5-4BEA-8807-4D4AC49E2228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E87650F8-50C5-4BEA-8807-4D4AC49E2228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E87650F8-50C5-4BEA-8807-4D4AC49E2228}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06D16E41-CB3C-4D1F-9A7C-C65A960164B9}
+	EndGlobalSection
+EndGlobal
