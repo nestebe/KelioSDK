@@ -1,28 +1,24 @@
 ﻿using KelioSDK.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KelioSDK.Common
 {
     public static class Client
     {
         public static T Post<S, T>(
-          string username,
-          string password,
-          string baseuri,
-          string service,
-          S request)
-          where S : class
-          where T : class, new()
+            string username,
+            string password,
+            string baseuri,
+            string service,
+            S request,
+            int timeoutseconds = 60)
+            where S : class
+            where T : class, new()
         {
             string action;
             string data = Factory.Request<S>(request, out action);
             string address = baseuri.TrimEnd('/') + "/" + service;
-            using (KelioWebclient kelioWebclient = new KelioWebclient(username, password, action))
+            using (KelioWebclient kelioWebclient = new KelioWebclient(username, password, action, timeoutseconds))
             {
                 try
                 {
@@ -58,19 +54,20 @@ namespace KelioSDK.Common
         }
 
         public static async Task<T> PostAsync<S, T>(
-          string username,
-          string password,
-          string baseuri,
-          string service,
-          S request)
-          where S : class
-          where T : class, new()
+            string username,
+            string password,
+            string baseuri,
+            string service,
+            S request,
+            int timeoutseconds = 60)
+            where S : class
+            where T : class, new()
         {
             string action;
             string data = Factory.Request<S>(request, out action);
             string address = baseuri.TrimEnd('/') + "/" + service;
             T obj;
-            using (KelioWebclient client = new KelioWebclient(username, password, action))
+            using (KelioWebclient client = new KelioWebclient(username, password, action, timeoutseconds))
             {
                 try
                 {
@@ -103,6 +100,7 @@ namespace KelioSDK.Common
                     }
                 }
             }
+
             return obj;
         }
     }
