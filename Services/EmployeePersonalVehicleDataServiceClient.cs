@@ -19,7 +19,7 @@ namespace KelioSDK.Services
     public EmployeePersonalVehicleDataServiceClient(
       string username,
       string password,
-      string baseuri)
+      string baseuri, int timeoutSeconds = 60) 
     {
       this.username = username;
       this.password = password;

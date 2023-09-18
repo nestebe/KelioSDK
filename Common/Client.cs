@@ -11,7 +11,7 @@ namespace KelioSDK.Common
             string baseuri,
             string service,
             S request,
-            int timeoutSeconds = 60)
+            int timeoutSeconds = 60)  
             where S : class
             where T : class, new()
         {
@@ -59,7 +59,7 @@ namespace KelioSDK.Common
             string baseuri,
             string service,
             S request,
-            int timeoutSeconds = 60)
+            int timeoutSeconds = 60)  
             where S : class
             where T : class, new()
         {

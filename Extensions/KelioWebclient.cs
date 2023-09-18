@@ -11,11 +11,11 @@ namespace KelioSDK.Extensions
     {
         public int Timeout { get; set; }
 
-        public KelioWebclient(string username, string password, string action, int timeoutseconds = 60)
+        public KelioWebclient(string username, string password, string action, int timeoutSeconds = 60)  
         {
             try
             {
-                this.Timeout = timeoutseconds * 1000;
+                this.Timeout = timeoutSeconds * 1000;
                 this.Encoding = Encoding.UTF8;
                 this.Headers[HttpRequestHeader.AcceptEncoding] = "gzip, deflate";
                 this.Headers[HttpRequestHeader.ContentType] = "text/xml; charset=utf-8";

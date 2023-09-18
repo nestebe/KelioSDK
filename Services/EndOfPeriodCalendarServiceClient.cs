@@ -16,7 +16,7 @@ namespace KelioSDK.Services
     private readonly string password;
     private readonly string baseuri; private readonly int timeoutSeconds;
 
-    public EndOfPeriodCalendarServiceClient(string username, string password, string baseuri, int timeoutSeconds = 60)
+    public EndOfPeriodCalendarServiceClient(string username, string password, string baseuri, int timeoutSeconds = 60)  
     {
       this.username = username;
       this.password = password;

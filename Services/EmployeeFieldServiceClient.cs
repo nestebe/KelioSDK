@@ -16,7 +16,7 @@ namespace KelioSDK.Services
     private readonly string password;
     private readonly string baseuri; private readonly int timeoutSeconds;
 
-    public EmployeeFieldServiceClient(string username, string password, string baseuri, int timeoutSeconds = 60)
+    public EmployeeFieldServiceClient(string username, string password, string baseuri, int timeoutSeconds = 60)  
     {
       this.username = username;
       this.password = password;
