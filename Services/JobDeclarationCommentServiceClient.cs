@@ -1,7 +1,4 @@
-﻿
-//.JobDeclarationCommentServiceClient
-
-
+﻿//.JobDeclarationCommentServiceClient
 
 
 using KelioSDK.Common;
@@ -9,30 +6,35 @@ using System.Threading.Tasks;
 
 namespace KelioSDK.Services
 {
-  public class JobDeclarationCommentServiceClient
-  {
-    private const string service = "JobDeclarationCommentService";
-    private readonly string username;
-    private readonly string password;
-    private readonly string baseuri;
-
-    public JobDeclarationCommentServiceClient(string username, string password, string baseuri)
+    public class JobDeclarationCommentServiceClient
     {
-      this.username = username;
-      this.password = password;
-      this.baseuri = baseuri;
-    }
+        private const string service = "JobDeclarationCommentService";
+        private readonly string username;
+        private readonly string password;
+        private readonly string baseuri;
+        private readonly int timeoutSeconds;
 
-    public ExportJobDeclarationCommentsResponse ExportJobDeclarationComments(
-      ExportJobDeclarationComments arg)
-    {
-      return Client.Post<ExportJobDeclarationComments, ExportJobDeclarationCommentsResponse>(this.username, this.password, this.baseuri, "JobDeclarationCommentService", arg);
-    }
+        public JobDeclarationCommentServiceClient(string username, string password, string baseuri,
+            int timeoutSeconds = 60)
+        {
+            this.username = username;
+            this.password = password;
+            this.baseuri = baseuri;
+            this.timeoutSeconds = timeoutSeconds;
+        }
 
-    public Task<ExportJobDeclarationCommentsResponse> ExportJobDeclarationCommentsAsync(
-      ExportJobDeclarationComments arg)
-    {
-      return Client.PostAsync<ExportJobDeclarationComments, ExportJobDeclarationCommentsResponse>(this.username, this.password, this.baseuri, "JobDeclarationCommentService", arg);
+        public ExportJobDeclarationCommentsResponse ExportJobDeclarationComments(
+            ExportJobDeclarationComments arg)
+        {
+            return Client.Post<ExportJobDeclarationComments, ExportJobDeclarationCommentsResponse>(this.username,
+                this.password, this.baseuri, "JobDeclarationCommentService", arg, this.timeoutSeconds);
+        }
+
+        public Task<ExportJobDeclarationCommentsResponse> ExportJobDeclarationCommentsAsync(
+            ExportJobDeclarationComments arg)
+        {
+            return Client.PostAsync<ExportJobDeclarationComments, ExportJobDeclarationCommentsResponse>(this.username,
+                this.password, this.baseuri, "JobDeclarationCommentService", arg, this.timeoutSeconds);
+        }
     }
-  }
 }

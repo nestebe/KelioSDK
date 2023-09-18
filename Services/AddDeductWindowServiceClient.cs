@@ -1,7 +1,4 @@
-﻿
-//.AddDeductWindowServiceClient
-
-
+﻿//.AddDeductWindowServiceClient
 
 
 using KelioSDK.Common;
@@ -9,54 +6,62 @@ using System.Threading.Tasks;
 
 namespace KelioSDK.Services
 {
-  public class AddDeductWindowServiceClient
-  {
-    private const string service = "AddDeductWindowService";
-    private readonly string username;
-    private readonly string password;
-    private readonly string baseuri;
-
-    public AddDeductWindowServiceClient(string username, string password, string baseuri)
+    public class AddDeductWindowServiceClient
     {
-      this.username = username;
-      this.password = password;
-      this.baseuri = baseuri;
-    }
+        private const string service = "AddDeductWindowService";
+        private readonly string username;
+        private readonly string password;
+        private readonly string baseuri;
+        private readonly int timeoutSeconds;
 
-    public ExportAddDeductWindowsResponse ExportAddDeductWindows(
-      ExportAddDeductWindows arg)
-    {
-      return Client.Post<ExportAddDeductWindows, ExportAddDeductWindowsResponse>(this.username, this.password, this.baseuri, "AddDeductWindowService", arg);
-    }
+        public AddDeductWindowServiceClient(string username, string password, string baseuri, int timeoutSeconds = 60)
+        {
+            this.username = username;
+            this.password = password;
+            this.baseuri = baseuri;
+            this.timeoutSeconds = timeoutSeconds;
+        }
 
-    public Task<ExportAddDeductWindowsResponse> ExportAddDeductWindowsAsync(
-      ExportAddDeductWindows arg)
-    {
-      return Client.PostAsync<ExportAddDeductWindows, ExportAddDeductWindowsResponse>(this.username, this.password, this.baseuri, "AddDeductWindowService", arg);
-    }
+        public ExportAddDeductWindowsResponse ExportAddDeductWindows(
+            ExportAddDeductWindows arg)
+        {
+            return Client.Post<ExportAddDeductWindows, ExportAddDeductWindowsResponse>(this.username, this.password,
+                this.baseuri, "AddDeductWindowService", arg, this.timeoutSeconds);
+        }
 
-    public ExportAddDeductWindowsListResponse ExportAddDeductWindowsList(
-      ExportAddDeductWindowsList arg)
-    {
-      return Client.Post<ExportAddDeductWindowsList, ExportAddDeductWindowsListResponse>(this.username, this.password, this.baseuri, "AddDeductWindowService", arg);
-    }
+        public Task<ExportAddDeductWindowsResponse> ExportAddDeductWindowsAsync(
+            ExportAddDeductWindows arg)
+        {
+            return Client.PostAsync<ExportAddDeductWindows, ExportAddDeductWindowsResponse>(this.username,
+                this.password, this.baseuri, "AddDeductWindowService", arg, this.timeoutSeconds);
+        }
 
-    public Task<ExportAddDeductWindowsListResponse> ExportAddDeductWindowsListAsync(
-      ExportAddDeductWindowsList arg)
-    {
-      return Client.PostAsync<ExportAddDeductWindowsList, ExportAddDeductWindowsListResponse>(this.username, this.password, this.baseuri, "AddDeductWindowService", arg);
-    }
+        public ExportAddDeductWindowsListResponse ExportAddDeductWindowsList(
+            ExportAddDeductWindowsList arg)
+        {
+            return Client.Post<ExportAddDeductWindowsList, ExportAddDeductWindowsListResponse>(this.username,
+                this.password, this.baseuri, "AddDeductWindowService", arg, this.timeoutSeconds);
+        }
 
-    public ImportAddDeductWindowsResponse ImportAddDeductWindows(
-      ImportAddDeductWindows arg)
-    {
-      return Client.Post<ImportAddDeductWindows, ImportAddDeductWindowsResponse>(this.username, this.password, this.baseuri, "AddDeductWindowService", arg);
-    }
+        public Task<ExportAddDeductWindowsListResponse> ExportAddDeductWindowsListAsync(
+            ExportAddDeductWindowsList arg)
+        {
+            return Client.PostAsync<ExportAddDeductWindowsList, ExportAddDeductWindowsListResponse>(this.username,
+                this.password, this.baseuri, "AddDeductWindowService", arg, this.timeoutSeconds);
+        }
 
-    public Task<ImportAddDeductWindowsResponse> ImportAddDeductWindowsAsync(
-      ImportAddDeductWindows arg)
-    {
-      return Client.PostAsync<ImportAddDeductWindows, ImportAddDeductWindowsResponse>(this.username, this.password, this.baseuri, "AddDeductWindowService", arg);
+        public ImportAddDeductWindowsResponse ImportAddDeductWindows(
+            ImportAddDeductWindows arg)
+        {
+            return Client.Post<ImportAddDeductWindows, ImportAddDeductWindowsResponse>(this.username, this.password,
+                this.baseuri, "AddDeductWindowService", arg, this.timeoutSeconds);
+        }
+
+        public Task<ImportAddDeductWindowsResponse> ImportAddDeductWindowsAsync(
+            ImportAddDeductWindows arg)
+        {
+            return Client.PostAsync<ImportAddDeductWindows, ImportAddDeductWindowsResponse>(this.username,
+                this.password, this.baseuri, "AddDeductWindowService", arg, this.timeoutSeconds);
+        }
     }
-  }
 }

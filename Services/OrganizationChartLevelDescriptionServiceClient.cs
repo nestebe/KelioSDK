@@ -1,7 +1,4 @@
-﻿
-//.OrganizationChartLevelDescriptionServiceClient
-
-
+﻿//.OrganizationChartLevelDescriptionServiceClient
 
 
 using KelioSDK.Common;
@@ -9,45 +6,61 @@ using System.Threading.Tasks;
 
 namespace KelioSDK.Services
 {
-  public class OrganizationChartLevelDescriptionServiceClient
-  {
-    private const string service = "OrganizationChartLevelDescriptionService";
-    private readonly string username;
-    private readonly string password;
-    private readonly string baseuri;
-
-    public OrganizationChartLevelDescriptionServiceClient(
-      string username,
-      string password,
-      string baseuri)
+    public class OrganizationChartLevelDescriptionServiceClient
     {
-      this.username = username;
-      this.password = password;
-      this.baseuri = baseuri;
-    }
+        private const string service = "OrganizationChartLevelDescriptionService";
+        private readonly string username;
+        private readonly string password;
+        private readonly string baseuri;
+        private readonly int timeoutSeconds;
 
-    public ExportOrganizationChartLevelDescriptionsForLevelResponse ExportOrganizationChartLevelDescriptionsForLevel(
-      ExportOrganizationChartLevelDescriptionsForLevel arg)
-    {
-      return Client.Post<ExportOrganizationChartLevelDescriptionsForLevel, ExportOrganizationChartLevelDescriptionsForLevelResponse>(this.username, this.password, this.baseuri, "OrganizationChartLevelDescriptionService", arg);
-    }
+        public OrganizationChartLevelDescriptionServiceClient(
+            string username,
+            string password,
+            string baseuri, int timeoutSeconds = 60)
+        {
+            this.username = username;
+            this.password = password;
+            this.baseuri = baseuri;
+            this.timeoutSeconds = timeoutSeconds;
+        }
 
-    public Task<ExportOrganizationChartLevelDescriptionsForLevelResponse> ExportOrganizationChartLevelDescriptionsForLevelAsync(
-      ExportOrganizationChartLevelDescriptionsForLevel arg)
-    {
-      return Client.PostAsync<ExportOrganizationChartLevelDescriptionsForLevel, ExportOrganizationChartLevelDescriptionsForLevelResponse>(this.username, this.password, this.baseuri, "OrganizationChartLevelDescriptionService", arg);
-    }
+        public ExportOrganizationChartLevelDescriptionsForLevelResponse
+            ExportOrganizationChartLevelDescriptionsForLevel(
+                ExportOrganizationChartLevelDescriptionsForLevel arg)
+        {
+            return Client
+                .Post<ExportOrganizationChartLevelDescriptionsForLevel,
+                    ExportOrganizationChartLevelDescriptionsForLevelResponse>(this.username, this.password,
+                    this.baseuri, "OrganizationChartLevelDescriptionService", arg, this.timeoutSeconds);
+        }
 
-    public ExportOrganizationChartLevelDescriptionsResponse ExportOrganizationChartLevelDescriptions(
-      ExportOrganizationChartLevelDescriptions arg)
-    {
-      return Client.Post<ExportOrganizationChartLevelDescriptions, ExportOrganizationChartLevelDescriptionsResponse>(this.username, this.password, this.baseuri, "OrganizationChartLevelDescriptionService", arg);
-    }
+        public Task<ExportOrganizationChartLevelDescriptionsForLevelResponse>
+            ExportOrganizationChartLevelDescriptionsForLevelAsync(
+                ExportOrganizationChartLevelDescriptionsForLevel arg)
+        {
+            return Client
+                .PostAsync<ExportOrganizationChartLevelDescriptionsForLevel,
+                    ExportOrganizationChartLevelDescriptionsForLevelResponse>(this.username, this.password,
+                    this.baseuri, "OrganizationChartLevelDescriptionService", arg, this.timeoutSeconds);
+        }
 
-    public Task<ExportOrganizationChartLevelDescriptionsResponse> ExportOrganizationChartLevelDescriptionsAsync(
-      ExportOrganizationChartLevelDescriptions arg)
-    {
-      return Client.PostAsync<ExportOrganizationChartLevelDescriptions, ExportOrganizationChartLevelDescriptionsResponse>(this.username, this.password, this.baseuri, "OrganizationChartLevelDescriptionService", arg);
+        public ExportOrganizationChartLevelDescriptionsResponse ExportOrganizationChartLevelDescriptions(
+            ExportOrganizationChartLevelDescriptions arg)
+        {
+            return Client
+                .Post<ExportOrganizationChartLevelDescriptions, ExportOrganizationChartLevelDescriptionsResponse>(
+                    this.username, this.password, this.baseuri, "OrganizationChartLevelDescriptionService", arg,
+                    this.timeoutSeconds);
+        }
+
+        public Task<ExportOrganizationChartLevelDescriptionsResponse> ExportOrganizationChartLevelDescriptionsAsync(
+            ExportOrganizationChartLevelDescriptions arg)
+        {
+            return Client
+                .PostAsync<ExportOrganizationChartLevelDescriptions, ExportOrganizationChartLevelDescriptionsResponse>(
+                    this.username, this.password, this.baseuri, "OrganizationChartLevelDescriptionService", arg,
+                    this.timeoutSeconds);
+        }
     }
-  }
 }
