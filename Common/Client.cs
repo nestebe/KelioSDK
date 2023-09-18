@@ -11,14 +11,14 @@ namespace KelioSDK.Common
             string baseuri,
             string service,
             S request,
-            int timeoutseconds = 60)
+            int timeoutSeconds = 60)
             where S : class
             where T : class, new()
         {
             string action;
             string data = Factory.Request<S>(request, out action);
             string address = baseuri.TrimEnd('/') + "/" + service;
-            using (KelioWebclient kelioWebclient = new KelioWebclient(username, password, action, timeoutseconds))
+            using (KelioWebclient kelioWebclient = new KelioWebclient(username, password, action, timeoutSeconds))
             {
                 try
                 {
@@ -59,7 +59,7 @@ namespace KelioSDK.Common
             string baseuri,
             string service,
             S request,
-            int timeoutseconds = 60)
+            int timeoutSeconds = 60)
             where S : class
             where T : class, new()
         {
@@ -67,7 +67,7 @@ namespace KelioSDK.Common
             string data = Factory.Request<S>(request, out action);
             string address = baseuri.TrimEnd('/') + "/" + service;
             T obj;
-            using (KelioWebclient client = new KelioWebclient(username, password, action, timeoutseconds))
+            using (KelioWebclient client = new KelioWebclient(username, password, action, timeoutSeconds))
             {
                 try
                 {

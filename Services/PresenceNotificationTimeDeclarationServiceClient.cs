@@ -14,7 +14,7 @@ namespace KelioSDK.Services
     private const string service = "PresenceNotificationTimeDeclarationService";
     private readonly string username;
     private readonly string password;
-    private readonly string baseuri;
+    private readonly string baseuri; private readonly int timeoutSeconds;
 
     public PresenceNotificationTimeDeclarationServiceClient(
       string username,
@@ -23,19 +23,19 @@ namespace KelioSDK.Services
     {
       this.username = username;
       this.password = password;
-      this.baseuri = baseuri;
+      this.baseuri = baseuri; this.timeoutSeconds = timeoutSeconds;
     }
 
     public ExportPresenceNotificationTimeDeclarationResponse ExportPresenceNotificationTimeDeclaration(
       ExportPresenceNotificationTimeDeclaration arg)
     {
-      return Client.Post<ExportPresenceNotificationTimeDeclaration, ExportPresenceNotificationTimeDeclarationResponse>(this.username, this.password, this.baseuri, "PresenceNotificationTimeDeclarationService", arg);
+      return Client.Post<ExportPresenceNotificationTimeDeclaration, ExportPresenceNotificationTimeDeclarationResponse>(this.username, this.password, this.baseuri, "PresenceNotificationTimeDeclarationService", arg, this.timeoutSeconds);
     }
 
     public Task<ExportPresenceNotificationTimeDeclarationResponse> ExportPresenceNotificationTimeDeclarationAsync(
       ExportPresenceNotificationTimeDeclaration arg)
     {
-      return Client.PostAsync<ExportPresenceNotificationTimeDeclaration, ExportPresenceNotificationTimeDeclarationResponse>(this.username, this.password, this.baseuri, "PresenceNotificationTimeDeclarationService", arg);
+      return Client.PostAsync<ExportPresenceNotificationTimeDeclaration, ExportPresenceNotificationTimeDeclarationResponse>(this.username, this.password, this.baseuri, "PresenceNotificationTimeDeclarationService", arg, this.timeoutSeconds);
     }
   }
 }
