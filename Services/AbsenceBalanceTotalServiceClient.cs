@@ -14,8 +14,7 @@ namespace KelioSDK.Services
         private readonly string baseuri;
         private readonly int timeoutSeconds;
 
-        public AbsenceBalanceTotalServiceClient(string username, string password, string baseuri,
-            int timeoutSeconds = 60)
+        public AbsenceBalanceTotalServiceClient(string username, string password, string baseuri, int timeoutSeconds = 60)
         {
             this.username = username;
             this.password = password;
